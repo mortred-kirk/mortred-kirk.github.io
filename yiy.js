@@ -13,18 +13,23 @@ let noCount = 0;
 
 yesButton.addEventListener("click", handleYesClick);
 
+const MAX_IMAGES = 6;
+let play = true;
+let noCount = 0;
+
 noButton.addEventListener("click", function () {
   if (play) {
     noCount++;
-    const imageIndex = Math.min(noCount, MAX_IMAGES);
+    const imageIndex = Math.min(noCount, 5); // caps image index at 5 if you have cat-0 to cat-5
     changeImage(imageIndex);
     resizeYesButton();
     updateNoButtonText();
     
+    // Disable ONLY when noCount reaches 6
     if (noCount >= 6) { 
       play = false;
-      noButton.style.backgroundColor = "#ccc"; // Turns button gray
-      noButton.style.cursor = "not-allowed";   // Changes cursor to disabled icon
+      noButton.style.backgroundColor = "#ccc";
+      noButton.style.cursor = "not-allowed";
     }
   }
 });
@@ -53,7 +58,7 @@ function generateMessage(noCount) {
     "luh ayaw talaga tigas mo te ha",
     "ayun tumutulo na luha ko:(",
     "kawawi man ako uy ouch:(",
-    "Ayan nasira mo dmo na tuloy mapindot" 
+    "Nakasira ka ng button HAHAHA!"
   ];
   const messageIndex = Math.min(noCount, messages.length - 1);
   return messages[messageIndex];
