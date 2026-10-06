@@ -6,33 +6,26 @@ const yesButton = document.querySelector(".btn--yes");
 const noButton = document.querySelector(".btn--no");
 const catImg = document.querySelector(".cat-img");
 
-const MAX_IMAGES = 5;
+const MAX_IMAGES = 6;
 
 let play = true;
 let noCount = 0;
 
 yesButton.addEventListener("click", handleYesClick);
 
-const MAX_IMAGES = 6;
-let play = true;
-let noCount = 0;
-
 noButton.addEventListener("click", function () {
   if (play) {
     noCount++;
-    const imageIndex = Math.min(noCount, 5); // caps image index at 5 if you have cat-0 to cat-5
+    const imageIndex = Math.min(noCount, 5); // caps image index at cat-5.jpg
     changeImage(imageIndex);
     resizeYesButton();
     updateNoButtonText();
-    
-    // Disable ONLY when noCount reaches 6
-    if (noCount >= 6) { 
+
+    // Disables the button ONLY on the 6th click
+    if (noCount >= 6) {
       play = false;
       noButton.style.backgroundColor = "#ccc";
       noButton.style.cursor = "not-allowed";
-    }
-  }
-});
     }
   }
 });
@@ -59,10 +52,6 @@ function generateMessage(noCount) {
     "ayun tumutulo na luha ko:(",
     "kawawi man ako uy ouch:(",
     "Nakasira ka ng button HAHAHA!"
-  ];
-  const messageIndex = Math.min(noCount, messages.length - 1);
-  return messages[messageIndex];
-}
   ];
   const messageIndex = Math.min(noCount, messages.length - 1);
   return messages[messageIndex];
