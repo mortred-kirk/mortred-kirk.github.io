@@ -20,8 +20,14 @@ noButton.addEventListener("click", function () {
     changeImage(imageIndex);
     resizeYesButton();
     updateNoButtonText();
-    if (noCount === MAX_IMAGES) {
+    
+    if (noCount >= 6) { 
       play = false;
+      noButton.style.backgroundColor = "#ccc"; // Turns button gray
+      noButton.style.cursor = "not-allowed";   // Changes cursor to disabled icon
+    }
+  }
+});
     }
   }
 });
