@@ -42,7 +42,7 @@ function resizeYesButton() {
 function generateMessage(noCount) {
   const messages = [
          "No",
-        "sure naba yan?",
+        "sure naba yan po?",
         "naka depende ba kung 3 yan?",
         "luh ayaw talaga tigas mo te ha",
         "ayun tumutulo na luha ko:(",
