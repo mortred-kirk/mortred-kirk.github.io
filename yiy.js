@@ -41,12 +41,17 @@ function resizeYesButton() {
 
 function generateMessage(noCount) {
   const messages = [
-         "No",
-        "sure naba yan po?",
-        "naka depende ba kung 3 yan?",
-        "luh ayaw talaga tigas mo te ha",
-        "ayun tumutulo na luha ko:(",
-        "kawawi man ako uy ouch:(",
+    "No",
+    "sure naba yan po?",
+    "naka depende ba kung 3 yan?",
+    "luh ayaw talaga tigas mo te ha",
+    "ayun tumutulo na luha ko:(",
+    "kawawi man ako uy ouch:(",
+    "Ayan nasira mo dmo na tuloy mapindot" 
+  ];
+  const messageIndex = Math.min(noCount, messages.length - 1);
+  return messages[messageIndex];
+}
   ];
   const messageIndex = Math.min(noCount, messages.length - 1);
   return messages[messageIndex];
