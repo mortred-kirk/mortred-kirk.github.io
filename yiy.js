@@ -51,7 +51,7 @@ function generateMessage(noCount) {
     "luh ayaw talaga tigas mo te ha",
     "ayun tumutulo na luha ko:(",
     "kawawi man ako uy ouch:(",
-    "Nakasira ka ng button HAHAHA!"
+    "Ayan Nasira mo tuloy"
   ];
   const messageIndex = Math.min(noCount, messages.length - 1);
   return messages[messageIndex];
